@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#searchbox {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+}
+
+.type-btn {
+    width: 70px;
+    margin: 0px;
+}
+
+.btn.active[data-active-class="on"] {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+
+.btn.active[data-active-class="off"] {
+    color: #fff;
+    background-color: grey;
+    border-color: #398439;
+}
+
+.input-group {
+    width: 208px
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>gimme OSM</title>
+    <script src='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="lib/jquery-1.11.3.min.js"></script>
+    <script src="lib/osmtogeojson.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/FileSaver.min.js"></script>
+</head>
+
+<body>
+    <div id='map'></div>
+    <div id='searchbox'>
+        <div class="btn-group" id="type_selector" data-toggle="buttons">
+            <label class="btn btn-default type-btn" data-active-class="off">
+                <input type="radio" class="toggle" value="node" checked autocomplete="off">Node
+            </label>
+            <label class="btn btn-default type-btn" data-active-class="off">
+                <input type="radio" class="toggle" value="way" autocomplete="off">Way
+            </label>
+            <label class="btn btn-default type-btn" data-active-class="off">
+                <input type="radio" class="toggle" value="relation" autocomplete="off">Relation
+            </label>
+        </div>
+        <div class="input-group">
+            <input type="number" id="id_input" class="form-control" placeholder="OSM ID">
+            <span class="input-group-btn">
+                        <button id="find_btn" class="btn btn-default" type="button">Find</button>
+            </span>
+        </div>
+    </div>
+    <script src='scripts/main.js'></script>
+</body>
+
+</html>
