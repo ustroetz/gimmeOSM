@@ -21,24 +21,52 @@ body {
     margin: 0px;
 }
 
-.btn.active[data-active-class="on"] {
-    color: #fff;
-    background-color: #286090;
-    border-color: #204d74;
+.btn,
+.btn-default.active {
+    text-shadow: none;
+    border: 0 none;
+    border-radius: 0;
+    outline: 0 none;
+    box-shadow: none;
+    background-color: #fff;
+    background-image: none;
 }
 
-.btn.active[data-active-class="off"] {
-    color: #fff;
-    background-color: grey;
-    border-color: #398439;
+.btn-default:hover {
+    background: #fff;
+    color: #236db8;
+}
+
+.btn-default.active:hover,
+.btn-default.active,
+.btn-default:active,
+.btn-default:active:focus {
+    background-color: #fff;
+    color: #236db8;
 }
 
 .input-group {
-    width: 208px
+    width: 208px;
+    background-color: #fff;
 }
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+#id_input,
+#find_btn {
+    text-shadow: none;
+    border: 0 none;
+    border-radius: 0;
+    outline: 0 none;
+    box-shadow: none;
+    background-color: #fff;
+    background-image: none;
+}
+
+#find_btn {
+    padding-top: 8px;
 }

@@ -2,8 +2,14 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiYWxscnlkZXIiLCJhIjoidWs5cUFfRSJ9.t8kxvO3nIhCa
 var map = L.mapbox.map('map', 'mapbox.light', {
     center: [6.664608, 36.386719],
     zoom: 2,
-    zoomControl: false
+    zoomControl: false,
+    attributionControl: false
 });
+
+var attribution = L.control.attribution();
+attribution.setPrefix('');
+attribution.addAttribution('<a href="https://github.com/ustroetz/gimmeOSM">gimme OSM Github</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
+attribution.addTo(map);
 
 new L.Control.Zoom({
     position: 'bottomright'
@@ -93,10 +99,22 @@ $(':input:checked').parent('.btn').addClass('active');
 $("#find_btn").click(function() {
     var id = $("#id_input").val();
     var type;
-    $('.btn').each(function(i, btn){
-        if($(btn).hasClass('active') ){
+    $('.btn').each(function(i, btn) {
+        if ($(btn).hasClass('active')) {
             type = $(btn).children().val();
         }
     });
     getOSM(type, id);
+});
+$("#id_input").keyup(function(event) {
+    if (event.keyCode == 13) {
+        var id = $("#id_input").val();
+        var type;
+        $('.btn').each(function(i, btn) {
+            if ($(btn).hasClass('active')) {
+                type = $(btn).children().val();
+            }
+        });
+        getOSM(type, id);
+    }
 });
